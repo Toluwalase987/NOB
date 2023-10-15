@@ -1,0 +1,33 @@
+.purpose{
+    margin-top: 10rem;
+    padding: 0 8rem;
+    display: flex;
+    gap: 5rem;
+}
+.purpose img{
+    width: 35%;
+    /* height: 50vh; */
+    border-radius: 10px;
+}
+.purpose-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.purpose-text h3{
+    color: #991b1b;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 25px;
+}
+.purpose-text p{
+    font-family: sans-serif;
+    font-size: 30px;
+    font-weight: 100;
+}
+.list li{
+    list-style: square;
+}
+.span{
+    
+}
