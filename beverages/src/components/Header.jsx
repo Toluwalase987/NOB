@@ -6,7 +6,7 @@ import { BsSearch } from 'react-icons/bs';
 
 export default function Header() {
   return (
-    <div>
+    <div className="header">
       <nav>
         <div className="nav-start">
           <h4>Naija's Beverages</h4>

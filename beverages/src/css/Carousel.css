@@ -6,8 +6,9 @@
 
 .carousel-image img {
   width: 50%;
-  height: 50vh;
+  height: 80vh;
 }
+
 .caption1 {
   color: #fff;
   position: absolute;
