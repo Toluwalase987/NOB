@@ -35,7 +35,7 @@ export default function Purpose() {
         <div className="purpose-top">
           <h2>Why naija's beverages?</h2>
           <h4>
-            Craving a particular drink miles away sucks, we've fixed that.
+            Cause Craving a particular drink miles away sucks, we've fixed that.
           </h4>
         </div>
 

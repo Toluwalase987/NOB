@@ -2,7 +2,7 @@ import React from 'react'
 import '../css/Carousel.css'
 import Carousel from "react-bootstrap/Carousel";
 import Zobo from "../img/Zobo4.jpg";
-import Kunu from "../img/kunu2.jpg";
+// import Kunu from "../img/kunu1.webp";
 import Fura from "../img/Fura3.jpg";
 import Bigi from "../img/Bigi2.jpg";
 
@@ -25,14 +25,13 @@ export default function Carousels() {
           <h3>Bringing them a step closer to you.</h3>
           </Carousel.Caption>
         </Carousel.Item>
-        <Carousel.Item className='carousel-body'>
+        {/* <Carousel.Item className='carousel-body'>
           <img className='image' src={Kunu} alt="" />
           <Carousel.Caption className='caption2'>
           <h3>We scale and move through the urban and rural environs of Nigeria to discover the best.</h3>
           <h3>Bringing them a step closer to you.</h3>
-            {/* <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> */}
           </Carousel.Caption>
-        </Carousel.Item>
+        </Carousel.Item> */}
         <Carousel.Item  className='carousel-body'>
           <img className='image' src={Bigi} alt="" />
           <Carousel.Caption className='caption4'>
