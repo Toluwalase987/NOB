@@ -1,18 +1,20 @@
 import React from "react";
-import deliver from "../img/deliver2.jpeg";
+import deliver from "../img/deliver3.jpeg";
 import "../css/Purpose.css";
 import { PiTarget } from "react-icons/pi";
 import { FaShip } from "react-icons/fa6";
 import { FaPeopleCarry } from "react-icons/fa";
 import event from "../img/event.jpeg";
-import home from "../img/home.jpg";
+import home from "../img/home1.avif";
 import office from "../img/office.jpg";
 
 export default function Purpose() {
   return (
     <div className="purpose">
       <div className="purpose1">
-        <img src={deliver} alt="" />
+        <div className="purpose1-img">
+          <img src={deliver} alt="" />
+        </div>
         <div className="purpose-text">
           <h3>What we do</h3>
           <p>
@@ -20,7 +22,7 @@ export default function Purpose() {
             <span className="span">
               Nigeria's finest manufacturers wey sabi
             </span>{" "}
-            and delivers them to your doorstep in any location.
+            and delivers them to your doorstep at any location.
           </p>
 
           <ul className="list">
@@ -35,7 +37,7 @@ export default function Purpose() {
         <div className="purpose-top">
           <h2>Why naija's beverages?</h2>
           <h4>
-            Cause Craving a particular drink miles away sucks, we've fixed that.
+            Cause Craving a particular drink miles away sucks, we've fixed that. 
           </h4>
         </div>
 
@@ -75,7 +77,9 @@ export default function Purpose() {
         <div className="supply">
           <div className="events">
             <h4>Events</h4>
-            <img src={event} alt="Event Center" />
+            <div className="purpose-img">
+              <img src={event} alt="Event Center" />
+            </div> 
             <p>
               What easier way to get drinks served at events and occations than
               with Naija's very best.
@@ -83,14 +87,19 @@ export default function Purpose() {
           </div>
           <div className="home">
             <h4>Homes</h4>
-            <img src={home} alt="Home" />
+            <div className="purpose-img">
+              <img src={home} alt="Home" />
+            </div>
             <p>
-              We deliver to homes to ensure you never run out of drinks while also not going to the supermarket.
+              We deliver to homes to ensure you never run out of drinks while
+              also not going to the supermarket.
             </p>
           </div>
           <div className="office">
             <h4>Offices</h4>
-            <img src={office} alt="Event Center" />
+            <div className="purpose-img">
+              <img src={office} alt="Event Center" />
+            </div>
             <p>
               One good way to keep the mind and body focused is to have Nigerian
               beverages in the heat of meetings.

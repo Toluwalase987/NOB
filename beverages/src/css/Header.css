@@ -1,4 +1,8 @@
 nav {
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -12,9 +16,7 @@ nav {
   align-items: center;
   gap: 40px;
 }
-/* .nav-start h4{
-    font-family: sans-serif;
-} */
+
 .links{
     display: flex;
     align-items: center;
@@ -66,7 +68,8 @@ nav {
     gap: 5px;
     font-size: 17px;
     font-weight: 400;
+    cursor: pointer;
 }
 .btn:hover{
-    color: #d97706;
+    color: #d97706 !important;
 }

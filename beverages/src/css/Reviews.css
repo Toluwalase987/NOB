@@ -1,5 +1,6 @@
 .reviews {
   position: relative;
+  color: #6b7280;
 }
 .reviews h2 {
   margin-top: 5rem;
@@ -8,9 +9,9 @@
 }
 .video {
   position: absolute;
-  top: -40%;
+  top: -50%;
   left: 0;
-  height: 150%;
+  height: 170%;
   width: 100%;
   /* z-index: 1; */
   opacity: 0.15;
@@ -21,17 +22,21 @@
   height: 100%;
   object-fit: cover;
 }
+/* .stories{
+    margin-bottom: 5rem;
+    background-color: red;
+} */
 .stories h2 {
-  margin-bottom: 5rem;
+  margin: 15rem 0 5rem 0;
 }
 
 .story {
   display: flex;
   gap: 20px;
   width: 75%;
-  background-color: rgba(255, 255, 255, 0.6); /* Specify RGB values for white */
+  background-color: rgba(255, 255, 255, 0.6);
   margin: 0 auto;
-  box-shadow: 0 3rem 6rem rgba(51, 51, 51, 0.1); /* Specify RGB values for gray */
+  box-shadow: 0 3rem 6rem rgba(51, 51, 51, 0.1);
   border-radius: 3px;
   padding: 50px 0px 50px 50px;
   font-size: 16px;
@@ -44,25 +49,45 @@
 .story > * {
   transform: skewX(12deg);
 }
+.story-shape {
+  width: 20rem;
+  height: 10rem;
+  border-radius: 50%;
+  /* border: 1px solid red; */
+  transform: skewX(12deg);
+  overflow: hidden;
+}
 .story-shape img {
   width: 100%;
-  height: 100px;
-  /* height: 150px; */
+  /* height: 100%; */
+  transform: scale(1.05);
+  transition: all 0.5s;
 }
-.story-shape:hover img {
-  transform:  scale(1);
+.story:hover .story-shape figcaption {
+  opacity: 1;
+  transform: translate(-50%, -50%);
+}
+.story:hover .story-shape img {
+  transform: scale(1);
   filter: blur(3px) brightness(80%);
 }
 .story-shape figcaption {
   position: absolute;
-  top: 20%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, 20%);
   color: #fff;
   text-transform: uppercase;
   font-size: 17px;
   text-align: center;
-  opacity: 1;
+  opacity: 0;
   transition: all 0.5s;
   backface-visibility: hidden;
+}
+.story-text {
+  font-family: 'Ubuntu';
+}
+.story-text h3{
+  margin-bottom: 2rem;
+  /* text-transform: uppercase; */
 }

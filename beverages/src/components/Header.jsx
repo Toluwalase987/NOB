@@ -22,7 +22,7 @@ export default function Header() {
             <input type="text" placeholder="Search Beverages" />
             <button className="search-icon"><BsSearch/></button>
           </div>
-          <button className="btn"><RxPerson/>Account</button>
+          <button className="btn"><RxPerson/>Account</button> 
           <button className="btn"><AiOutlineShoppingCart/>Cart</button>
         </div>
       </nav>

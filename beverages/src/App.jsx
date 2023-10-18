@@ -2,7 +2,9 @@ import React from 'react'
 import Header from './components/Header'
 import Carousel from './components/Carousel'
 import Purpose from './components/Purpose'
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Reviews from './components/Reviews'
+import Footer from './components/Footer'
 import '../src/App.css'
 
 export default function App() {
@@ -12,6 +14,7 @@ export default function App() {
       <Carousel/>
       <Purpose/>
       <Reviews/>
+      <Footer/>
     </div>
   )
 }
