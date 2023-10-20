@@ -1,12 +1,12 @@
 import React from "react";
-import deliver from "../img/deliver3.jpeg";
-import "../css/Purpose.css";
+import deliver from "../../../img/deliver3.jpeg";
+import "../../../css/Purpose.css";
 import { PiTarget } from "react-icons/pi";
 import { FaShip } from "react-icons/fa6";
 import { FaPeopleCarry } from "react-icons/fa";
-import event from "../img/event.jpeg";
-import home from "../img/home1.avif";
-import office from "../img/office.jpg";
+import event from "../../../img/event.jpeg";
+import home from "../../../img/home1.avif";
+import office from "../../../img/office.jpg";
 
 export default function Purpose() {
   return (

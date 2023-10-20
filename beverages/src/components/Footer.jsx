@@ -11,7 +11,7 @@ export default function Footer() {
       <p>Built by Toluwalase</p>
       <div className="footer-icons">
         <a className="icons" href="https://twitter.com/herr_tolu?s=21&t=EUkvX5RP-YT4nv_qW85k_Q" target="_blank"><FaTwitterSquare /></a>
-        <a className="icons" allow-intent href="mailto:toluwalase987@gmail.com" target="_blank"><SiGmail /></a>
+        <a className="icons" data-allow-intent href="mailto:toluwalase987@gmail.com" target="_blank"><SiGmail /></a>
         <a className="icons" href="https://www.linkedin.com/in/toluwalase-kunle-john-882296160/" target="_blank"><BsLinkedin /></a>
       </div>
       <p>&copy;Copyright by Toluwalase </p>

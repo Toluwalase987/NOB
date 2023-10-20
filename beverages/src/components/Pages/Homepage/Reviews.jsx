@@ -1,7 +1,8 @@
 import React from "react";
-import man from "../img/man3.jpeg";
-import woman from "../img/woman.webp";
-import "../css/Reviews.css";
+import man from "../../../img/man3.jpeg";
+import stuff from "../../../img/stuff";
+import woman from "../../../img/woman.webp";
+import "../../../css/Reviews.css";
 
 export default function Reviews() {
   return (

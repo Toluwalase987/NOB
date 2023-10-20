@@ -1,20 +1,45 @@
-import React from 'react'
-import Header from './components/Header'
-import Carousel from './components/Carousel'
-import Purpose from './components/Purpose'
+import React from "react";
+import Header from "./components/Header";
+import Carousel from "./components/Pages/Homepage/Carousel";
+import Purpose from "./components/Pages/Homepage/Purpose";
+import MediumPage from "./components/Pages/MediumPage";
+import Bigi from "./components/Pages/DrinksPage/Bigi";
+import Zobo from "./components/Pages/DrinksPage/Zobo";
+import Kunu from "./components/Pages/DrinksPage/Kunu";
+import Fura from "./components/Pages/DrinksPage/Fura";
+import Cart from "./components/CartPage.jsx/Cart";
+import Help from "./components/Pages/HelpPage/Help";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Reviews from './components/Reviews'
-import Footer from './components/Footer'
-import '../src/App.css'
+import Reviews from "./components/Pages/Homepage/Reviews";
+import Footer from "./components/Footer";
+import "../src/App.css";
 
 export default function App() {
   return (
-    <div>
-      <Header/>
-      <Carousel/>
-      <Purpose/>
-      <Reviews/>
-      <Footer/>
-    </div>
-  )
+    <Router>
+      <div>
+        <Header />
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <Carousel />
+                <Purpose />
+                <Reviews />
+              </>
+            }
+          />
+          <Route path="/drinks" element={<MediumPage/>}/>
+          <Route path="/bigi" element={<Bigi/>}/>
+          <Route path="/zobo" element={<Zobo/>}/>
+          <Route path="/kunu" element={<Kunu/>}/>
+          <Route path="/fura" element={<Fura/>}/>
+          <Route path="/help" element={<Help/>}/>
+          <Route path="/cart" element={<Cart/>}/>
+        </Routes>
+        <Footer />
+      </div>
+    </Router>
+  );
 }

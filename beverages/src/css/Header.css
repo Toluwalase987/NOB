@@ -5,28 +5,32 @@ nav {
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 10px 30px;
+  justify-content: space-between; 
+  padding: 15px 30px;
   background-color: #fff;
   /* position: fixed; */
 }
 
 .nav-start {
   display: flex;
+  justify-content: center;
   align-items: center;
   gap: 40px;
 }
 
 .links{
     display: flex;
-    align-items: center;
-    margin-bottom: 3px;
+    align-items: stretch;
+    margin-bottom: 7px;
+    font-weight: 500;
+    /* background-color: red; */
     /* gap: 20px; */
 }
 .link{
     color: #333;
-    padding: 5px 20px;
+    padding: 10px 20px;
     border-radius: 10%;
+    align-self: stretch;
 }
 .link:hover{
     text-decoration: none;
@@ -48,14 +52,14 @@ nav {
   color: inherit;
   padding: 5px 10px;
   border-radius: 100px;
-  width: 300px;
+  width: 350px;
   transition: all 0.2s;
   margin-right: -2.5rem;
-  background-color: #f3f4f6;
+  background-color: #f3f4f6; 
 }
 .nav-end input:focus{
     outline: none;
-    width: 400px;
+    width: 450px;
 }
 .search-icon{
     margin-right: 8rem;
@@ -67,7 +71,7 @@ nav {
     justify-content: center;
     gap: 5px;
     font-size: 17px;
-    font-weight: 400;
+    font-weight: 500;
     cursor: pointer;
 }
 .btn:hover{

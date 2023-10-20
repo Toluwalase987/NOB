@@ -3,18 +3,25 @@ import "../css/Header.css";
 import { AiOutlineShoppingCart } from 'react-icons/ai';
 import { RxPerson } from 'react-icons/rx';
 import { BsSearch } from 'react-icons/bs';
+import { Link,useNavigate } from "react-router-dom";
 
 export default function Header() {
+  const navigate = useNavigate()
+
+  function cart(){
+    const cartRoute = '/cart'
+    navigate(cartRoute)
+  }
   return (
     <div className="header">
-      <nav>
+      <nav> 
         <div className="nav-start">
           <h4>Naija's Beverages</h4>
           <div className="links">
-            <a className="link" href="#">Home</a>
-            <a className="link" href="#">Drinks</a>
-            <a className="link" href="#">Info</a>
-            <a className="link" href="#">Help</a>
+            <Link className="link" to="/">Home</Link>
+            <Link className="link" to="/drinks">Drinks</Link>
+            {/* <a className="link" href="#">Info</a> */}
+            <Link className="link" to="/help">Help</Link>
           </div>
         </div>
         <div className="nav-end">
@@ -23,7 +30,7 @@ export default function Header() {
             <button className="search-icon"><BsSearch/></button>
           </div>
           <button className="btn"><RxPerson/>Account</button> 
-          <button className="btn"><AiOutlineShoppingCart/>Cart</button>
+          <button className="btn" onClick={cart}><AiOutlineShoppingCart/>Cart</button>
         </div>
       </nav>
     </div>
