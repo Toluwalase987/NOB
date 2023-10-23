@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "bootstrap": "^4.6.0",
+    "netlify-cli": "^16.9.1",
     "react-bootstrap": "^2.9.0",
     "react-icons": "^4.11.0"
   }

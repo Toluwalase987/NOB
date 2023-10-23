@@ -3,6 +3,7 @@
     padding: 2rem 5rem;
 } 
 .medium-container{
+    /* padding: 5rem 5rem; */
     position: relative;
 }
 body{
@@ -53,15 +54,21 @@ body{
 }
 
 .loading-spinner{
-    border: 4px solid rgba(0, 0, 0, 0.1);
-    border-top: 4px solid #0077cc;
+    border: 1rem solid rgba(0, 0, 0, 0.1);
+    border-top: 1rem solid #0077cc;
     border-radius: 50%;
-    width: 30px;
-    height: 30px;
+    width: 4rem;
+    height: 4rem;
     animation: spin 2s linear infinite;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 999;
+    margin-top: 20%;
+    margin-left: 45%;
+    padding: 5rem 5rem;
   }
+  @keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
