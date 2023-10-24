@@ -1,0 +1,96 @@
+.sign-in {
+  padding: 4rem 8rem; 
+  margin: 10rem 25rem;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.sign-in h2{
+  margin-bottom: 2rem;
+  margin-top: -3rem;
+  border-bottom: 1px solid #d1d5db;
+  width: 100%;
+  text-align: center;
+}
+.sign-in h6{
+  font-weight: 300;
+  font-size: 15px;
+  color: #a1a1aa;
+}
+
+.signIn-form { 
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  gap: 1rem;
+}
+.signIn-form label {
+  color: #333;
+  font-size: 15px;
+  align-self: flex-start;
+  margin-left: -3.7rem;
+  margin-bottom: -1rem;
+}
+.signIn-form input {
+  padding: 0.4rem 1rem;
+  width: 150%;
+  border-radius: 5px;
+  border: 1px solid #9ca3af;
+}
+.signIn-form input::placeholder{
+  color: #d1d5db;
+}
+.signIn-form input:focus {
+  outline: none;
+  /* border-bottom: 2px solid #16a34a; */
+}
+/* .signIn-form input:focus:invalid{
+    border-bottom: 2px solid #b91c1c;
+} */
+.signIn-form button {
+  padding: 0.5rem 3rem;
+  border-radius: 5px;
+  border: none;
+  background-color: #6366f1;
+  color: #fff;
+}
+.signIn-form button:hover {
+  box-shadow: 0 5px 5px #333;
+}
+.signIn-form button:active {
+  box-shadow: 0 2px 5px #333;
+}
+.signIn-form p {
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  /* margin-bottom: -0.6rem; */
+}
+.google,
+.apple {
+  padding: 0.9rem 1rem 0.1rem;
+  cursor: pointer;
+  border: 1px solid #d1d5db;
+  width: 15rem;
+  border-radius: 5px;
+}
+.google:hover,
+.apple:hover {
+  background-color: #a1a1aa;
+}
+
+.signin-link {
+  margin-top: 2rem;
+  font-size: 17px;
+  color: #dc2626;
+  font-weight: 500;
+  cursor: pointer;
+}
+.signin-link:hover {
+  color: #dc2626;
+}

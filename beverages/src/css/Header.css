@@ -8,7 +8,7 @@ nav {
   justify-content: space-between; 
   padding: 15px 30px;
   background-color: #fff; 
-  /* position: fixed; */
+  /* position: fixed; */ 
 }
 
 .nav-start {
@@ -38,6 +38,7 @@ nav {
     color: #333;
 }
 .nav-end {
+  position: relative;
   display: flex;
   align-items: center;
   gap: 15px;
@@ -73,7 +74,42 @@ nav {
     font-size: 17px;
     font-weight: 500;
     cursor: pointer;
+    /* background-color: red; */
 }
 .btn:hover{
     color: #d97706 !important;
 }
+.btn-account{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  font-size: 17px;
+  font-weight: 500;
+  background-color: #fff;
+}
+.dropdown{
+  display: none;
+}
+.dropdown button{
+  padding: 0.5rem 2rem;
+  background-color: #6366f1;
+  color: #fff;
+  text-transform: uppercase;
+}
+.dropdown button:hover{
+  box-shadow: 0 5px 5px #333; 
+}
+.dropdown button:active{
+  box-shadow: 0 2px 5px #333;
+}
+.account-somn:hover  .dropdown{
+display: block;
+position: absolute;
+left: 67%;
+top: 80%;
+background-color: #fff;
+padding: 1rem 2rem;
+
+}
+

@@ -7,8 +7,10 @@ import Bigi from "./components/Pages/DrinksPage/Bigi";
 import Zobo from "./components/Pages/DrinksPage/Zobo";
 import Kunu from "./components/Pages/DrinksPage/Kunu";
 import Fura from "./components/Pages/DrinksPage/Fura";
-import Cart from "./components/CartPage.jsx/Cart";
+import Cart from "./components/Pages/CartPage.jsx/Cart";
+import SignUp from "./components/Pages/AccountsPage/SignUp";
 import Help from "./components/Pages/HelpPage/Help";
+import SignIn from "./components/Pages/AccountsPage/SignIn";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Reviews from "./components/Pages/Homepage/Reviews";
 import Footer from "./components/Footer";
@@ -37,6 +39,8 @@ export default function App() {
           <Route path="/fura" element={<Fura/>}/>
           <Route path="/help" element={<Help/>}/>
           <Route path="/cart" element={<Cart/>}/>
+          <Route path="/signIn" element={<SignIn/>}/>
+          <Route path="/signup" element={<SignUp/>}/>
         </Routes>
         <Footer />
       </div>

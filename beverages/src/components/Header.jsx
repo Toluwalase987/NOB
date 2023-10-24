@@ -12,6 +12,9 @@ export default function Header() {
     const cartRoute = '/cart'
     navigate(cartRoute)
   }
+  function signIn(){
+    navigate('/signIn')
+  }
   return (
     <div className="header">
       <nav> 
@@ -29,7 +32,12 @@ export default function Header() {
             <input type="text" placeholder="Search Beverages" />
             <button className="search-icon"><BsSearch/></button>
           </div>
-          <button className="btn"><RxPerson/>Account</button> 
+          <div className="account-somn">
+            <button className="btn-account"><RxPerson/>Account</button> 
+            <div className="dropdown">
+              <button onClick={signIn}>Sign In</button>
+            </div>
+          </div>
           <button className="btn" onClick={cart}><AiOutlineShoppingCart/>Cart</button>
         </div>
       </nav>
