@@ -38,7 +38,10 @@ export default function Header() {
               <button onClick={signIn}>Sign In</button>
             </div>
           </div>
+          <div className="carty">
           <button className="btn" onClick={cart}><AiOutlineShoppingCart/>Cart</button>
+          <span>25</span>
+          </div>
         </div>
       </nav>
     </div>

@@ -5,10 +5,10 @@ nav {
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between; 
+  justify-content: space-between;
   padding: 15px 30px;
-  background-color: #fff; 
-  /* position: fixed; */ 
+  background-color: #fff;
+  /* position: fixed; */
 }
 
 .nav-start {
@@ -18,24 +18,24 @@ nav {
   gap: 40px;
 }
 
-.links{
-    display: flex;
-    align-items: stretch;
-    margin-bottom: 7px;
-    font-weight: 500;
-    /* background-color: red; */
-    /* gap: 20px; */
+.links {
+  display: flex;
+  align-items: stretch;
+  margin-bottom: 7px;
+  font-weight: 500;
+  /* background-color: red; */
+  /* gap: 20px; */
 }
-.link{
-    color: #333;
-    padding: 10px 20px;
-    border-radius: 10%;
-    align-self: stretch;
+.link {
+  color: #333;
+  padding: 10px 20px;
+  border-radius: 10%;
+  align-self: stretch;
 }
-.link:hover{
-    text-decoration: none;
-    background-color: #f3f4f6;
-    color: #333;
+.link:hover {
+  text-decoration: none;
+  background-color: #f3f4f6;
+  color: #333;
 }
 .nav-end {
   position: relative;
@@ -56,30 +56,30 @@ nav {
   width: 350px;
   transition: all 0.2s;
   margin-right: -2.5rem;
-  background-color: #f3f4f6; 
+  background-color: #f3f4f6;
 }
-.nav-end input:focus{
-    outline: none;
-    width: 450px;
+.nav-end input:focus {
+  outline: none;
+  width: 450px;
 }
-.search-icon{
-    margin-right: 8rem;
-    background-color: #f3f4f6;
+.search-icon {
+  margin-right: 8rem;
+  background-color: #f3f4f6;
 }
-.btn{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 5px;
-    font-size: 17px;
-    font-weight: 500;
-    cursor: pointer;
-    /* background-color: red; */
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  font-size: 17px;
+  font-weight: 500;
+  cursor: pointer;
+  /* background-color: red; */
 }
-.btn:hover{
-    color: #d97706 !important;
+.btn:hover {
+  color: #7c3aed ;
 }
-.btn-account{
+.btn-account {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -88,28 +88,46 @@ nav {
   font-weight: 500;
   background-color: #fff;
 }
-.dropdown{
+.dropdown {
   display: none;
 }
-.dropdown button{
+.dropdown button {
   padding: 0.5rem 2rem;
   background-color: #6366f1;
   color: #fff;
   text-transform: uppercase;
 }
-.dropdown button:hover{
-  box-shadow: 0 5px 5px #333; 
+.dropdown button:hover {
+  box-shadow: 0 5px 5px #333;
 }
-.dropdown button:active{
+.dropdown button:active {
   box-shadow: 0 2px 5px #333;
 }
-.account-somn:hover  .dropdown{
-display: block;
-position: absolute;
-left: 67%;
-top: 80%;
-background-color: #fff;
-padding: 1rem 2rem;
-
+.account-somn:hover .dropdown {
+  display: block;
+  position: absolute;
+  left: 67%;
+  top: 80%;
+  background-color: #fff;
+  padding: 1rem 2rem;
 }
 
+.carty {
+  position: relative;
+}
+
+.carty span {
+  background-color: #7c3aed;
+  padding: 0.1rem 0.05rem;
+  font-size: 10px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50px;
+  position: absolute;
+  bottom: 18px;
+  left: 0.8rem;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

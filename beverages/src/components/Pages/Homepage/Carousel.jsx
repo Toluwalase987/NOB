@@ -16,7 +16,7 @@ export default function Carousels() {
           <Carousel.Caption className='caption1'>
             <h3>Savour the refreshing and exquisite taste of Naija's finest beverages, best on the planet.</h3>
             <h4>None other comes close.</h4>
-            <Link to='/drinks'><button>Begin shopping &rarr;</button></Link>
+            <Link to='/drinks'><button>Begin shopping <span className='btn-carousel'>&rarr;</span></button></Link>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item className='carousel-body'>
@@ -24,7 +24,7 @@ export default function Carousels() {
           <Carousel.Caption className='caption3'>
           <h3>We scale and move through the urban and rural environs of Nigeria to discover the best.</h3>
           <h4>Bringing them a step closer to you.</h4>
-          <Link to='/drinks'><button>Begin shopping &rarr;</button></Link>
+          <Link to='/drinks'><button>Begin shopping <span className='btn-carousel'>&rarr;</span></button></Link>
           </Carousel.Caption>
         </Carousel.Item>
         {/* <Carousel.Item className='carousel-body'>
@@ -39,7 +39,7 @@ export default function Carousels() {
           <Carousel.Caption className='caption4'>
           <h3>We support and distribute products made in Nigeria, from carbonated drinks to fruit juices.</h3>
           <h4>Enjoyment go wan kee you.</h4>
-          <Link to='/drinks'><button>Begin shopping &rarr;</button></Link>
+          <Link to='/drinks'><button>Begin shopping <span className='btn-carousel'>&rarr;</span></button></Link>
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>

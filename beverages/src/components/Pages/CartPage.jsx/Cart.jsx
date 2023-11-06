@@ -2,7 +2,7 @@ import React from 'react'
 import '../../../css/Cart.css'
 // import cart from '../../img/cart.png'
 import cart1 from '../../../img/cart.webp'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom' 
 
 export default function Cart() {
     const navigate = useNavigate()

@@ -36,6 +36,10 @@
   background-color: transparent;
   margin-top: 9rem;
 }
+.caption1 button:hover .btn-carousel{
+  margin-left: 1rem;
+  transition: margin-left .3s;
+}
 .caption1 h4{
   font-size: 2rem;
 }
@@ -53,6 +57,10 @@
   border: 1px solid #5eead4;
   background-color: transparent;
   margin-top: 9rem;
+}
+.caption2 button:hover .btn-carousel{
+  margin-left: 1rem;
+  transition: margin-left .3s;
 }
 .caption2 h4{
   font-size: 2rem;
@@ -72,6 +80,10 @@
   background-color: transparent;
   margin-top: 9rem;
 }
+.caption3 button:hover .btn-carousel{
+  margin-left: 1rem;
+  transition: margin-left .3s;
+}
 .caption3 h4{
   font-size: 2rem;
 }
@@ -89,6 +101,10 @@
   border: 1px solid #bbf7d0;
   background-color: transparent;
   margin-top: 9rem;
+}
+.caption4 button:hover .btn-carousel{
+  margin-left: 1rem;
+  transition: margin-left .3s;
 }
 .caption4 h4{
   font-size: 2rem;
