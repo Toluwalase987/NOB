@@ -1,10 +1,20 @@
-import React from 'react'
+import React, { useContext, useEffect } from 'react'
 import '../../../css/Help.css'
+import ProductsContext from '../../../context/products'
 
 export default function Help() {
+  const {fetchProducts, results} = useContext(ProductsContext)
+
+  useEffect(()=>{
+    fetchProducts()
+  }, [])
+
   return (
     <div className='help'>
       <div className="help-content">
+        {results.map(somn=>{
+          return <p key={somn.id}>{somn.title}</p>
+        })}
         <h4>Help Center</h4>
         <h3>Hi, we are here to help you.</h3>
         <h5>Send your questions, requests or complaints to</h5>

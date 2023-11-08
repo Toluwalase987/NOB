@@ -18,11 +18,13 @@ export default function SignUp() {
         <label htmlFor="">Last Name</label>
         <input type="text" placeholder='Enter Last Name' />
         <label htmlFor="">Email Address</label>
-        <input type="text" placeholder='Enter Email Address' />
+        <input type="email" placeholder='Enter Email Address' />
         <label htmlFor="">Phone Number</label>
         <input type="text" placeholder='Enter Phone Number' />
         <label htmlFor="">Password</label>
         <input type="text" placeholder='Enter Password' />
+        <label htmlFor="">Confirm Password</label>
+        <input type="text" placeholder='Confirm Password' />
         <button>Create An Account</button>
       </form>
       <div className="already">

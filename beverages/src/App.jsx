@@ -11,6 +11,7 @@ import Cart from "./components/Pages/CartPage.jsx/Cart";
 import SignUp from "./components/Pages/AccountsPage/SignUp";
 import Help from "./components/Pages/HelpPage/Help";
 import SignIn from "./components/Pages/AccountsPage/SignIn";
+import Reset from "./components/Pages/AccountsPage/Reset";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Reviews from "./components/Pages/Homepage/Reviews";
 import Footer from "./components/Footer";
@@ -41,6 +42,7 @@ export default function App() {
           <Route path="/cart" element={<Cart/>}/>
           <Route path="/signIn" element={<SignIn/>}/>
           <Route path="/signup" element={<SignUp/>}/>
+          <Route path="/reset" element={<Reset/>}/>
         </Routes>
         <Footer />
       </div>

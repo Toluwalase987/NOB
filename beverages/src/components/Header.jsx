@@ -40,7 +40,7 @@ export default function Header() {
           </div>
           <div className="carty">
           <button className="btn" onClick={cart}><AiOutlineShoppingCart/>Cart</button>
-          <span>25</span>
+          <span>7</span>
           </div>
         </div>
       </nav>
