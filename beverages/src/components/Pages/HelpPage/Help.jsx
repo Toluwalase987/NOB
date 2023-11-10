@@ -12,9 +12,6 @@ export default function Help() {
   return (
     <div className='help'>
       <div className="help-content">
-        {results.map(somn=>{
-          return <p key={somn.id}>{somn.title}</p>
-        })}
         <h4>Help Center</h4>
         <h3>Hi, we are here to help you.</h3>
         <h5>Send your questions, requests or complaints to</h5>

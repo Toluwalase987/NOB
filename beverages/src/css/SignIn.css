@@ -60,6 +60,9 @@
 .signIn-form button:hover {
   box-shadow: 0 5px 5px #333;
 }
+.signIn-form button:disabled:hover{
+  box-shadow: none;
+}
 .signIn-form button:active {
   box-shadow: 0 2px 5px #333;
 }

@@ -1,6 +1,6 @@
 .signup {
   padding: 1rem 8rem;
-  margin: 6rem 25rem;
+  margin: 8rem 25rem;
   background-color: #fff;
   display: flex;
   flex-direction: column;
@@ -56,6 +56,9 @@
   }
   .signup-form button:hover {
     box-shadow: 0 5px 5px #333;
+  }
+  .signup-form button:disabled:hover{
+    box-shadow: none;
   }
   .signup-form button:active {
     box-shadow: 0 2px 5px #333;
