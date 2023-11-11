@@ -8,7 +8,7 @@ import { auth } from "../../../firebase/config";
 import ProductsContext from "../../../context/products";
 
 export default function SignUp() {
-  const { firstName, setFirstName } = useContext(ProductsContext);
+  const { firstName, setFirstName, setUsername } = useContext(ProductsContext);
   // const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
@@ -28,11 +28,13 @@ export default function SignUp() {
       toast.error("Password does not match");
     }
     setIsLoading(true);
+    setUsername(prevData =>{
+      return [...prevData, firstName]
+    })
 
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         const user = userCredential.user;
-        setFirstName(firstName)
         setIsLoading(false);
         toast.success("Account created succesfully 😄");
         navigate("/signIn");

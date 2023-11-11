@@ -10,8 +10,9 @@ const ProductsContext = createContext();
 function Provider({ children, onLogin }) {
     
   const [results, setResults] = useState([]);
-  const [isSignedIn, setIsSignedIn] = useState(false);
+  const [isSignedIn, setIsSignedIn] = useState(true);
   const [firstName, setFirstName] = useState("");
+  const [username, setUsername] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -24,11 +25,11 @@ function Provider({ children, onLogin }) {
   };
 
   function loginUser() {
-    setIsSignedIn(false);
+    setIsSignedIn(false)
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         const user = userCredential.user;
-        setFirstName(firstName)
+        // setFirstName(firstName);
         console.log('Successfully signed in:', user);
         setIsLoading(false);
         setIsSignedIn(true);
@@ -40,6 +41,16 @@ function Provider({ children, onLogin }) {
       });
   }
 
+  // function logoutUser(){
+  //   signOut(auth)
+  //     .then(() => {
+  //       setIsSignedIn(false)
+  //     })
+  //     .catch((error) => {
+  //       toast.error("Sign Out Failed");
+  //     });
+  // }
+
   const valueToShare = {
     fetchProducts,
     results,
@@ -50,8 +61,11 @@ function Provider({ children, onLogin }) {
     isLoading,
     setEmail,
     setPassword,
+    setIsSignedIn,
     email,
-    password
+    password,
+    username,
+    setUsername
   };
 
   return (

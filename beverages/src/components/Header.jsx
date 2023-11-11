@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import "../css/Header.css";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { RxPerson } from "react-icons/rx";
@@ -12,7 +12,8 @@ import ProductsContext from "../context/products";
 import "react-toastify/dist/ReactToastify.css";
 
 export default function Header() {
-  const { isSignedIn, firstName } = useContext(ProductsContext);
+  const { isSignedIn, firstName, setIsSignedIn, userName } =
+    useContext(ProductsContext);
   const navigate = useNavigate();
 
   function cart() {
@@ -22,10 +23,13 @@ export default function Header() {
   function signIn() {
     navigate("/signIn");
   }
+
   function logoutUser() {
+    setIsSignedIn(false)
     signOut(auth)
       .then(() => {
-        toast.success("Signed Out");
+        setIsSignedIn(true);
+        toast.success("Signed Out")
         navigate("/");
       })
       .catch((error) => {
@@ -60,19 +64,19 @@ export default function Header() {
             </button>
           </div>
           <div className="account-somn">
-            {!isSignedIn ? (
+            {isSignedIn ? (
               <button className="btn-account">
-              <RxPerson />
-              Account
-            </button>
+                <RxPerson />
+                Account
+              </button>
             ) : (
               <button className="btn-account">
-              <BsPersonFillCheck />
-              Hi, {firstName}
-            </button>
+                <BsPersonFillCheck />
+                Hi, {userName}
+              </button>
             )}
             <div className="dropdown">
-              {!isSignedIn ? (
+              {isSignedIn ? (
                 <button onClick={signIn}>Sign In</button>
               ) : (
                 <button onClick={logoutUser}>Log Out</button>
