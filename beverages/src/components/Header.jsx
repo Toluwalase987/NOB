@@ -1,20 +1,25 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "../css/Header.css";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { RxPerson } from "react-icons/rx";
 import { BsSearch } from "react-icons/bs";
 import { BsPersonFillCheck } from "react-icons/bs";
 import { Link, useNavigate } from "react-router-dom";
-import { signOut } from "firebase/auth";
+import { onAuthStateChanged, signOut } from "firebase/auth";
 import { ToastContainer, toast } from "react-toastify";
 import { auth } from "../firebase/config";
 import ProductsContext from "../context/products";
 import "react-toastify/dist/ReactToastify.css";
+// import {useDispatch} from "react-redux"
+import { SET_ACTIVE_USER } from "./redux/slice/authSlice";
+
 
 export default function Header() {
-  const { isSignedIn, firstName, setIsSignedIn, userName } =
-    useContext(ProductsContext);
+  // const dispatch = useDispatch()
+  const { isSignedIn, setIsSignedIn } = useContext(ProductsContext);
   const navigate = useNavigate();
+
+  const [username, setUsername] = useState("")
 
   function cart() {
     const cartRoute = "/cart";
@@ -36,6 +41,21 @@ export default function Header() {
         toast.error("Sign Out Failed");
       });
   }
+  // Monitor signed in user
+  useEffect(()=>{
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        console.log(user);
+        const uid = user.uid;
+        console.log(user.displayName);
+        setUsername(user.displayName)
+
+        
+      } else {
+        setUsername("")
+      }
+    });
+  }, [])
 
   return (
     <div className="header">
@@ -72,7 +92,7 @@ export default function Header() {
             ) : (
               <button className="btn-account">
                 <BsPersonFillCheck />
-                Hi, {userName}
+                Hi, {username}
               </button>
             )}
             <div className="dropdown">

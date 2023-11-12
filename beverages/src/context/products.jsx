@@ -12,7 +12,6 @@ function Provider({ children, onLogin }) {
   const [results, setResults] = useState([]);
   const [isSignedIn, setIsSignedIn] = useState(true);
   const [firstName, setFirstName] = useState("");
-  const [username, setUsername] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -29,7 +28,7 @@ function Provider({ children, onLogin }) {
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         const user = userCredential.user;
-        // setFirstName(firstName);
+        setFirstName(user.displayName|| user.email);
         console.log('Successfully signed in:', user);
         setIsLoading(false);
         setIsSignedIn(true);
@@ -64,8 +63,6 @@ function Provider({ children, onLogin }) {
     setIsSignedIn,
     email,
     password,
-    username,
-    setUsername
   };
 
   return (

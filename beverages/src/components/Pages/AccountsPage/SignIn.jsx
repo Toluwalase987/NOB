@@ -3,36 +3,50 @@ import "../../../css/SignIn.css";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { FaApple } from "react-icons/fa";
-import { signInWithEmailAndPassword } from "firebase/auth";
+import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { auth } from "../../../firebase/config";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer, toast } from "react-toastify";
 import ProductsContext from "../../../context/products";
 
 export default function SignIn() {
-  const navigate = useNavigate()
-  const {loginUser, firstName} = useContext(ProductsContext)
+  const navigate = useNavigate();
+  const { loginUser, isIsSignedIn, setIsSignedIn } = useContext(ProductsContext);
 
-  const [email, setEmail] = useState('');
+  // const [isSignedIn, setIsSignedIn] = useState(true);
+
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
- const handleLogin = async (e)=>{
-  e.preventDefault()
-  setIsLoading(true)
+  const provider = new GoogleAuthProvider();
+  const signInGoogle = () => {
+    setIsSignedIn(false)
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        const user = result.user;
+        toast.success("Login Successful")
+        setIsSignedIn(true)
+        navigate("/")
+      })
+      .catch((error) => {
+        toast.error("Login Failed")
+      });
+  };
 
-  try {
-    await loginUser(email, password)
-    toast.success("Signed In")
-    navigate("/")
-  } catch (error) {
-    toast.error("Wrong Information Provided. Please Retry.")
-    setIsLoading(false)
-  }
- }
- useEffect(()=>{
-  console.log(firstName);
- }, [])
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    setIsLoading(true);
+
+    try {
+      await loginUser(email, password);
+      toast.success("Signed In");
+      navigate("/");
+    } catch (error) {
+      toast.error("Wrong Information Provided. Please Retry.");
+      setIsLoading(false);
+    }
+  };
 
   return (
     <div className="sign-in">
@@ -64,7 +78,7 @@ export default function SignIn() {
           {isLoading ? <div className="spinning-loader"></div> : "Login"}
         </button>
         <h6>OR</h6>
-        <div className="google">
+        <div className="google" onClick={signInGoogle}>
           <p>
             <FcGoogle />
             Login with Google
