@@ -4,7 +4,7 @@ import Carousel from "react-bootstrap/Carousel";
 import { Link } from 'react-router-dom';
 import Zobo from "../../../img/Zobo4.jpg";
 import Fura from "../../../img/Fura3.jpg";
-import Bigi from "../../../img/Bigi2.jpg";
+import Bigi from "../../../img/Bigi2.jpg"; 
 
 export default function Carousels() { 
 

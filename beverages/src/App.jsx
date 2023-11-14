@@ -12,6 +12,7 @@ import SignUp from "./components/Pages/AccountsPage/SignUp";
 import Help from "./components/Pages/HelpPage/Help";
 import SignIn from "./components/Pages/AccountsPage/SignIn";
 import Reset from "./components/Pages/AccountsPage/Reset";
+import Slider from "./components/Pages/Homepage/Slider";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Reviews from "./components/Pages/Homepage/Reviews";
 import Footer from "./components/Footer";
@@ -27,7 +28,8 @@ export default function App() {
             path="/"
             element={
               <>
-                <Carousel />
+                {/* <Carousel /> */}
+                <Slider/>
                 <Purpose />
                 <Reviews />
               </>

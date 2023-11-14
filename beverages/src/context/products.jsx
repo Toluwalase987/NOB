@@ -24,14 +24,10 @@ function Provider({ children, onLogin }) {
   };
 
   function loginUser() {
-    setIsSignedIn(false)
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         const user = userCredential.user;
-        setFirstName(user.displayName|| user.email);
-        console.log('Successfully signed in:', user);
         setIsLoading(false);
-        setIsSignedIn(true);
         navigate("/");
       })
       .catch((error) => {

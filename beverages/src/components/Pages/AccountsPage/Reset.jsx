@@ -16,7 +16,7 @@ export default function Reset() {
     setIsLoading(true)
     sendPasswordResetEmail(auth, email)
       .then(() => {
-        toast.success("Check Email For a Reset Link")
+        toast.success("Reset Link Sent To Email")
         setIsLoading(false)
       })
       .catch((error) => {

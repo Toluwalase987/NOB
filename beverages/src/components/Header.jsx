@@ -10,13 +10,14 @@ import { ToastContainer, toast } from "react-toastify";
 import { auth } from "../firebase/config";
 import ProductsContext from "../context/products";
 import "react-toastify/dist/ReactToastify.css";
-// import {useDispatch} from "react-redux"
-import { SET_ACTIVE_USER } from "./redux/slice/authSlice";
+import {useDispatch} from "react-redux"
+import { REMOVE_ACTIVE_USER, SET_ACTIVE_USER } from "./redux/slice/authSlice";
 
 
 export default function Header() {
-  // const dispatch = useDispatch()
-  const { isSignedIn, setIsSignedIn } = useContext(ProductsContext);
+  const dispatch = useDispatch()
+  // const { isSignedIn, setIsSignedIn } = useContext(ProductsContext);
+  const [isSignedIn, setIsSignedIn] = useState();
   const navigate = useNavigate();
 
   const [username, setUsername] = useState("")
@@ -30,10 +31,8 @@ export default function Header() {
   }
 
   function logoutUser() {
-    setIsSignedIn(false)
     signOut(auth)
       .then(() => {
-        setIsSignedIn(true);
         toast.success("Signed Out")
         navigate("/");
       })
@@ -41,18 +40,38 @@ export default function Header() {
         toast.error("Sign Out Failed");
       });
   }
+
   // Monitor signed in user
   useEffect(()=>{
     onAuthStateChanged(auth, (user) => {
       if (user) {
-        console.log(user);
+        // console.log(user);
         const uid = user.uid;
-        console.log(user.displayName);
-        setUsername(user.displayName)
+        if(user.displayName == null){
+            const u1 = user.email.substring(0, user.email.indexOf("@"))
+            const u1WithoutNumbers = u1.replace(/\d+/g, '');
+            const uName = u1WithoutNumbers.charAt(0).toUpperCase() + u1.slice(1)
+            // console.log(uName);
+            setUsername(uName)
+        }else{
+          setUsername(user.displayName)
+        }
 
+        dispatch(
+          SET_ACTIVE_USER({
+            email: user.email,
+            username: user.displayName ? user.displayName : username,
+            userId: user.uid
+          })
+        )
+        setIsSignedIn(false)
         
       } else {
         setUsername("")
+        dispatch(
+          REMOVE_ACTIVE_USER()
+        )
+        setIsSignedIn(true)
       }
     });
   }, [])
