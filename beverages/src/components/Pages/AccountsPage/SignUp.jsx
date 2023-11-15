@@ -14,6 +14,8 @@ export default function SignUp() {
   const [lastName, setLastName] = useState("");
 
   const [email, setEmail] = useState("");
+  const [validEmail, setValidEmail] = useState(false);
+  const [emailFocus, setEmailFocus] = useState(false);
 
   const [password, setPassword] = useState("");
   const [validPwd, setValidPwd] = useState(false);
@@ -29,9 +31,9 @@ export default function SignUp() {
   const userRef = useRef();
   const navigate = useNavigate();
 
-  const USER_REGEX = /^[A-z][A-z0-9-_]{3,23}$/;
   const PWD_REGEX =
     /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%])[A-Za-z0-9!@#$%]{8,24}$/;
+  const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
   useEffect(() => {
     userRef.current.focus();
@@ -41,6 +43,10 @@ export default function SignUp() {
     setValidPwd(PWD_REGEX.test(password));
     setValidMatch(password === confirmPassword);
   }, [password, confirmPassword, PWD_REGEX]);
+
+  useEffect(() => {
+    setValidEmail(EMAIL_REGEX.test(email));
+  }, [email, EMAIL_REGEX]);
 
   function signin() {
     navigate("/signIn");
@@ -55,9 +61,6 @@ export default function SignUp() {
 
   function registerUser(e) {
     e.preventDefault();
-    if (password !== confirmPassword) {
-      toast.error("Password does not match");
-    }
     setIsLoading(true);
 
     createUserWithEmailAndPassword(auth, email, password)
@@ -66,10 +69,10 @@ export default function SignUp() {
 
         setIsLoading(false);
         toast.success("Account created succesfully 😄");
-        navigate("/signIn");
+        navigate("/");
       })
       .catch((error) => {
-        toast.error("Something went wrong, please try again.");
+        toast.error("Email Already In Use.");
         setIsLoading(false);
       });
   }
@@ -79,30 +82,10 @@ export default function SignUp() {
       <ToastContainer />
       <h2>Create An Account</h2>
       <form action="" className="signup-form" onSubmit={registerUser}>
-        <label htmlFor="">First Name</label>
-        <input
-          type="text"
-          ref={userRef}
-          required
-          placeholder="Enter First Name"
-          value={firstName}
-          onChange={(e) => {
-            setFirstName(e.target.value);
-          }}
-        />
-        <label htmlFor="">Last Name</label>
-        <input
-          type="text"
-          placeholder="Enter Last Name"
-          required
-          value={lastName}
-          onChange={(e) => {
-            setLastName(e.target.value);
-          }}
-        />
         <label htmlFor="">Email Address</label>
         <input
           type="email"
+          ref={userRef}
           placeholder="Enter Email Address"
           required
           autoComplete="off"
@@ -110,8 +93,17 @@ export default function SignUp() {
           onChange={(e) => {
             setEmail(e.target.value);
           }}
+          onFocus={() => setEmailFocus(true)}
+          onBlur={() => setEmailFocus(false)}
         />
-        <div className="password-input">
+        <p
+          id="confirmnote"
+          className={emailFocus && !validEmail ? "instructions" : "offscreen"}
+        >
+          <BsExclamationCircle />
+          Enter Valid Email Address
+        </p>
+        <div className="signup_password-input">
           <label htmlFor="">Password</label>
           <input
             type={showPassword ? "text" : "password"}
@@ -139,7 +131,8 @@ export default function SignUp() {
           className={pwdFocus && !validPwd ? "instructions" : "offscreen"}
         >
           <BsExclamationCircle />
-          Must Contain<br/>
+          Must Contain
+          <br />
           8-24 Characters
           <br />
           Uppercase and Lowercase
@@ -149,7 +142,7 @@ export default function SignUp() {
           A Number
           <br />
         </p>
-        <div className="password-input">
+        <div className="signup_password-input">
           <label htmlFor="">Confirm Password</label>
           <input
             type={showConfirmPassword ? "text" : "password"}
@@ -173,14 +166,16 @@ export default function SignUp() {
             {showConfirmPassword ? <FaEye /> : <FaEyeSlash />}
           </span>
         </div>
-          <p
+        <p
           id="confirmnote"
           className={matchFocus && !validMatch ? "instructions" : "offscreen"}
         >
-          <BsExclamationCircle/>
+          <BsExclamationCircle />
           Must match password.
         </p>
-        <button disabled={isLoading && !validName || !validPwd || !validMatch ? true : false}>
+        <button
+          disabled={(isLoading && !validPwd) || !validMatch ? true : false}
+        >
           {isLoading ? (
             <div className="spinning-loader"></div>
           ) : (

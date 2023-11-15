@@ -3,11 +3,6 @@ import '../../../css/Help.css'
 import ProductsContext from '../../../context/products'
 
 export default function Help() {
-  const {fetchProducts, results} = useContext(ProductsContext)
-
-  useEffect(()=>{
-    fetchProducts()
-  }, [])
 
   return (
     <div className='help'>

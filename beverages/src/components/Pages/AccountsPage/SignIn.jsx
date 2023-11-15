@@ -48,11 +48,11 @@ export default function SignIn() {
       .then((userCredential) => {
         const user = userCredential.user;
         setIsLoading(false);
-        toast.success("Login Successful");
+        toast.success("Welcome Back");
         navigate("/");
       })
       .catch((error) => {
-        toast.error("Login Failed");
+        toast.error("Incorrect Credentials");
         setIsLoading(false);
       });
   };

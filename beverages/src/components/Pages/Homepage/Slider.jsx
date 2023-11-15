@@ -3,6 +3,7 @@ import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from "react-icons/fa";
 import sliderData from "./SliderData";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import '../../../css/Carousel.css'
 
 export default function Slider() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -56,7 +57,7 @@ export default function Slider() {
                 <div className="slider-img">
                   <img src={image} alt="Slide" />
                 </div>
-                <div className={` ${index === 0 ? 'caption1' : index === 1 ? 'caption3' : 'caption4'}`}>
+                <div className={`caption ${index === 0 ? 'caption1' : index === 1 ? 'caption3' : 'caption4'}`}>
                   <h3>{caption.heading}</h3>
                   <h4>{caption.subheading}</h4>
                   <Link to={link.url}><button>{link.text} <span className='btn-carousel'>&rarr;</span></button></Link>

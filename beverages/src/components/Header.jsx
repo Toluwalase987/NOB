@@ -16,7 +16,6 @@ import { REMOVE_ACTIVE_USER, SET_ACTIVE_USER } from "./redux/slice/authSlice";
 
 export default function Header() {
   const dispatch = useDispatch()
-  // const { isSignedIn, setIsSignedIn } = useContext(ProductsContext);
   const [isSignedIn, setIsSignedIn] = useState();
   const navigate = useNavigate();
 

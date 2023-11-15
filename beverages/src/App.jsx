@@ -1,6 +1,5 @@
 import React from "react";
 import Header from "./components/Header";
-import Carousel from "./components/Pages/Homepage/Carousel";
 import Purpose from "./components/Pages/Homepage/Purpose";
 import MediumPage from "./components/Pages/MediumPage";
 import Bigi from "./components/Pages/DrinksPage/Bigi";

@@ -1,6 +1,6 @@
 .signup {
   padding: 1rem 10rem;
-  margin: 8rem 25rem;
+  margin: 10rem 25rem;
   background-color: #fff;
   display: flex;
   flex-direction: column;
@@ -82,19 +82,19 @@
   color: #fff;
 }
 
-.password-input {
+.signup_password-input {
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
-.password-input label {
+.signup_password-input label {
   color: #333;
   font-size: 15px;
   margin-bottom: 1px;
   margin-left: -8.5rem;
 }
-.password-input input {
+.signup_password-input input {
   padding: 0.4rem 1rem;
   width: 464%;
   border-radius: 5px;

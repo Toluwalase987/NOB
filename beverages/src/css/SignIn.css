@@ -102,14 +102,34 @@
   color: #dc2626;
 }
 
-.password-toggle {
-  position: absolute;
-  right: -7rem; 
-  top: 66%;
-  transform: translateY(-50%);
-  cursor: pointer; 
+.password-input {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.password-input label {
+  color: #333;
+  font-size: 15px;
+  margin-bottom: 1px;
+  margin-left: -9.4rem;
+}
+.password-input input {
+  padding: 0.4rem 1rem;
+  width: 612%;
+  border-radius: 5px;
+  border: 1px solid #9ca3af;
+  font-size: 16px;
+  margin-left: -9.5rem;
 }
 
+.password-toggle {
+  position: absolute;
+  right: -7rem;
+  top: 66%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
 
 
 
