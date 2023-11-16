@@ -8,18 +8,16 @@ import { Link, useNavigate } from "react-router-dom";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import { ToastContainer, toast } from "react-toastify";
 import { auth } from "../firebase/config";
-import ProductsContext from "../context/products";
 import "react-toastify/dist/ReactToastify.css";
 import {useDispatch} from "react-redux"
 import { REMOVE_ACTIVE_USER, SET_ACTIVE_USER } from "./redux/slice/authSlice";
 
 
-export default function Header() {
+export default function Header({username, setUsername}) {
   const dispatch = useDispatch()
   const [isSignedIn, setIsSignedIn] = useState();
   const navigate = useNavigate();
 
-  const [username, setUsername] = useState("")
 
   function cart() {
     const cartRoute = "/cart";
@@ -73,6 +71,10 @@ export default function Header() {
         setIsSignedIn(true)
       }
     });
+  }, [])
+
+  useEffect(()=>{
+    
   }, [])
 
   return (

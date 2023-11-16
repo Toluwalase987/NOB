@@ -1,6 +1,5 @@
 import React, { useContext, useEffect } from 'react'
 import '../../../css/Help.css'
-import ProductsContext from '../../../context/products'
 
 export default function Help() {
 

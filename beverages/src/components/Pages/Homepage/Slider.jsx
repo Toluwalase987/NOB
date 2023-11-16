@@ -57,7 +57,7 @@ export default function Slider() {
                 <div className="slider-img">
                   <img src={image} alt="Slide" />
                 </div>
-                <div className={`caption ${index === 0 ? 'caption1' : index === 1 ? 'caption3' : 'caption4'}`}>
+                <div className={` ${index === 0 ? 'caption1' : index === 1 ? 'caption3' : 'caption4'}`}>
                   <h3>{caption.heading}</h3>
                   <h4>{caption.subheading}</h4>
                   <Link to={link.url}><button>{link.text} <span className='btn-carousel'>&rarr;</span></button></Link>

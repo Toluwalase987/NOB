@@ -7,7 +7,6 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../../firebase/config";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { BsExclamationCircle } from "react-icons/bs";
-import ProductsContext from "../../../context/products";
 
 export default function SignUp() {
   const [firstName, setFirstName] = useState("");

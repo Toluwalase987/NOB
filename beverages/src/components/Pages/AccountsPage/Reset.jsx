@@ -5,7 +5,6 @@ import { toast } from "react-toastify";import "react-toastify/dist/ReactToastify
 import { ToastContainer } from "react-toastify";
 import { auth } from "../../../firebase/config";
 import { sendPasswordResetEmail } from "firebase/auth";
-import ProductsContext from "../../../context/products";
 
 export default function Reset() {
   const [isLoading, setIsLoading] = useState(false);

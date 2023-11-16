@@ -9,9 +9,8 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer, toast } from "react-toastify";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import ProductsContext from "../../../context/products";
 
-export default function SignIn() {
+export default function SignIn({updateUsername}) {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -33,13 +32,18 @@ export default function SignIn() {
     signInWithPopup(auth, provider)
       .then((result) => {
         const user = result.user;
-        toast.success("Login Successful");
+        console.log(user);
+        const displayName = user.displayName
+        const firstName = displayName.split(" ")[0]
+        updateUsername(firstName)
+        toast.success(`Welcome ${firstName}`);
         navigate("/");
       })
       .catch((error) => {
         toast.error("Login Failed");
       });
   };
+  
 
   const loginUser = (e) => {
     e.preventDefault();
