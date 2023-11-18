@@ -4,6 +4,9 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 import { RxPerson } from "react-icons/rx";
 import { BsSearch } from "react-icons/bs";
 import { BsPersonFillCheck } from "react-icons/bs";
+import { RiFileList2Line, RiFileList2Fill } from "react-icons/ri";
+import { MdPayment, MdPerson } from "react-icons/md";
+import { FaLocationDot } from "react-icons/fa6";
 import { Link, useNavigate } from "react-router-dom";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import { ToastContainer, toast } from "react-toastify";
@@ -74,7 +77,7 @@ export default function Header({username, setUsername}) {
   }, [])
 
   useEffect(()=>{
-    
+
   }, [])
 
   return (
@@ -117,9 +120,37 @@ export default function Header({username, setUsername}) {
             )}
             <div className="dropdown">
               {isSignedIn ? (
-                <button onClick={signIn}>Sign In</button>
+                <div className="dropdown-content">
+                  <button onClick={signIn}>Sign In</button>
+                  <div className="dropdown-dets first" onClick={signIn}>
+                    <RxPerson/>
+                    <p>My Account</p>
+                  </div>
+                  <div className="dropdown-dets" onClick={signIn}>
+                    <RiFileList2Line/>
+                    <p>Orders</p>
+                  </div>
+                </div>
               ) : (
-                <button onClick={logoutUser}>Log Out</button>
+                <div className="dropdown-content">
+                  <div className="dropdown-dets">
+                    <MdPerson/>
+                    <p>My Account</p>
+                  </div>
+                  <div className="dropdown-dets">
+                    <RiFileList2Fill/>
+                    <p>My Orders</p>
+                  </div>
+                  <div className="dropdown-dets">
+                    <FaLocationDot/>
+                    <p>Delivery Address</p>
+                  </div>
+                  <div className="dropdown-dets">
+                    <MdPayment/>
+                    <p>Payment Methods</p>
+                  </div>
+                  <button onClick={logoutUser}>Log Out</button>
+                </div>
               )}
             </div>
           </div>

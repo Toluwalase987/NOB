@@ -89,7 +89,7 @@ nav {
   background-color: #fff;
 }
 .dropdown {
-  display: none;
+  display: none; 
 }
 .dropdown button {
   padding: 0.5rem 2rem;
@@ -111,6 +111,22 @@ nav {
   background-color: #fff;
   padding: 1rem 2rem;
 }
+.dropdown-dets{
+  display: flex;
+  text-align: left;
+  gap: 0.5rem;
+  font-size: 16px;
+  font-weight: 400;
+  cursor: pointer;
+}
+.dropdown-dets > svg{
+  margin-top: 4px;
+  font-size: 18px;
+}
+.first{
+  margin-top: 10px;
+}
+
 
 .carty {
   position: relative;
