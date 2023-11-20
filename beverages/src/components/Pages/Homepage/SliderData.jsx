@@ -11,7 +11,7 @@ const sliderData = [
         subheading: "None other comes close.",
       },
       link: {
-        text: "Begin shopping",
+        text: "Begin shopping", 
         url: "/drinks",
       },
     },

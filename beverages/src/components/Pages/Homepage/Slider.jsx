@@ -63,7 +63,7 @@ export default function Slider() {
         return (
           <div
             key={slide.id}
-            className={index === currentSlide ? 'slide current' : 'slide'}
+            className={slide}
           >
             {index === currentSlide && (
               <div className="slides">
